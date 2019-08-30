@@ -67,6 +67,14 @@ class Application extends App
                 $server['http_referer'] = $header['referer'];
             }
 
+            if (isset($header['x-real-ip'])) {
+                $server['x-real-ip'] = $header['x-real-ip'];
+            }
+
+            if (isset($header['x-forwarded-for'])) {
+                $server['HTTP_X_FORWARDED_FOR'] = $header['x-forwarded-for'];
+            }
+
             if (isset($_GET[$this->config->get('var_pathinfo')])) {
                 $server['path_info'] = $_GET[$this->config->get('var_pathinfo')];
             }
