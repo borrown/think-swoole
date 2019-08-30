@@ -127,8 +127,8 @@ class Application extends App
                 $response->header($key, $val);
             }
 
-            $response->write($content);
-            $response->end();
+            // $response->write($content);
+            $response->end($content);
         } catch (HttpException $e) {
             $this->exception($response, $e);
         } catch (\Exception $e) {
