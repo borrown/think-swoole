@@ -210,7 +210,7 @@ class Application extends App
             $response->end($e->getMessage());
         }
 
-        throw $e;
+        // throw $e;
     }
 
     protected function webSocketException($server, $frame, $e)
@@ -221,6 +221,6 @@ class Application extends App
         ];
         $server->push($frame->fd, json_encode($response));
 
-        throw $e;
+        // throw $e;
     }
 }
